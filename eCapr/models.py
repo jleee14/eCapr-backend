@@ -16,6 +16,7 @@ class Bet(models.Model):
     date_resolved = models.DateTimeField(auto_now_add=False, auto_now=True) # need to update using queryset.update() - ask in issue.
     resolved = models.BooleanField()
     bet_result = models.CharField(max_length=10, default='None')
+    pot_win = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
 
     def __str__(self):
