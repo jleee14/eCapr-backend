@@ -1,0 +1,1 @@
+web: gunicorn ecapr_back.wsgi
