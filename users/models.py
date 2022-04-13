@@ -10,8 +10,8 @@ class User(AbstractUser):
     losses = models.IntegerField(default=0)
     pushes = models.IntegerField(default=0)
     # return_31 = models.DecimalField(max_digits=4, decimal_places=4)
-    REQUIRED_FIELDS = ['username']
-    USERNAME_FIELD = 'email' 
+    REQUIRED_FIELDS = ['email']
+    USERNAME_FIELD = 'username' 
 
     def get_username(self):
-        return self.email
+        return self.username
