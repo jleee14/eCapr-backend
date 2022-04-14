@@ -14,6 +14,10 @@ class BetList(generics.ListCreateAPIView):
     
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+    
+    def get_queryset(self):
+        user = self.request.user
+        return Bet.objects.filter(owner=user)
 
 class BetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bet.objects.all()
