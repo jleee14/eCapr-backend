@@ -8,7 +8,7 @@ from django.db.models.lookups import GreaterThan, LessThan
 
 # Create your views here.
 class BetList(generics.ListCreateAPIView):
-    # queryset = Bet.objects.all()
+    queryset = Bet.objects.all()
     serializer_class = BetSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     
@@ -16,8 +16,8 @@ class BetList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
     
     def get_queryset(self):
-        user = self.request.user.id
-        return Bet.objects.filter(owner=user)
+        user = self.request.user.username
+        return Bet.objects.filter(owner__username=user).all()
 
 class BetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bet.objects.all()
