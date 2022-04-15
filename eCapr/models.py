@@ -17,6 +17,7 @@ class Bet(models.Model):
     resolved = models.BooleanField()
     bet_result = models.CharField(max_length=10, default='None')
     pot_win = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    profit = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
 
     def __str__(self):

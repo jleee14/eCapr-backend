@@ -10,4 +10,4 @@ class BetSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Bet
-        fields = ('id', 'bookmaker', 'name', 'odds', 'bet_type', 'event_finish', 'wager', 'sport', 'league', 'notes', 'date_placed', 'date_resolved', 'resolved', 'bet_result', 'owner', 'bet_url', 'pot_win')
+        fields = ('id', 'bookmaker', 'name', 'odds', 'bet_type', 'event_finish', 'wager', 'sport', 'league', 'notes', 'date_placed', 'date_resolved', 'resolved', 'bet_result', 'owner', 'bet_url', 'pot_win', 'profit',)
