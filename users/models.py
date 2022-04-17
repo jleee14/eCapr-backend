@@ -9,7 +9,7 @@ class User(AbstractUser):
     wins = models.IntegerField(default=0)
     losses = models.IntegerField(default=0)
     pushes = models.IntegerField(default=0)
-    REQUIRED_FIELDS = ['email']
+    REQUIRED_FIELDS = ['email', 'wins', 'losses', 'pushes']
     USERNAME_FIELD = 'username' 
 
     def get_username(self):
